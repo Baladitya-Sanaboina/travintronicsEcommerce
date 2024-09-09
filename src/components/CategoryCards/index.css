@@ -1,0 +1,32 @@
+.card-category-alignment {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card-category-alignment li {
+  width: calc(50% - 20px); /* Dynamic sizing for all items */
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.first-category-card {
+  background-image: url("https://res.cloudinary.com/dbylngblb/image/upload/v1725815314/1_cvjtwt.jpg");
+  background-size: cover;
+  height: 250px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  /* Remove width and margin from here */
+}
+
+@media (max-width: 768px) {
+  .card-category-alignment li {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
