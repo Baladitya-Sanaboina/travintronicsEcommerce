@@ -1,0 +1,5 @@
+.each-product-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
