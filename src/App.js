@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
 import AddProducts from "./components/AddProducts";
+import Mens from "./components/Mens";
+import Women from "./components/Women";
 
 function Layout() {
   const location = useLocation();
@@ -26,6 +28,12 @@ function Layout() {
         </Route>
         <Route path="/cart" element={<ProtectedRoute />}>
           <Route index element={<Cart />} />
+        </Route>
+        <Route path="/category/men" element={<ProtectedRoute />}>
+          <Route index element={<Mens />} />
+        </Route>
+        <Route path="/category/women" element={<ProtectedRoute />}>
+          <Route index element={<Women />} />
         </Route>
         <Route path="/product-add" element={<ProtectedRoute />}>
           <Route index element={<AddProducts />} />

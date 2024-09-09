@@ -1,10 +1,15 @@
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
+import { CiLogin } from "react-icons/ci";
+import { RxHamburgerMenu } from "react-icons/rx";
+
 import "./index.css";
 
 const Header = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
   const onClickLogout = () => {
@@ -17,24 +22,6 @@ const Header = () => {
   return (
     <nav className="nav-header">
       <div className="nav-content">
-        <div className="nav-bar-mobile-logo-container">
-          <Link to="/">
-            <img
-              className="website-logo"
-              src="https://res.cloudinary.com/dbylngblb/image/upload/v1725792897/traveltech-logo-s_nktssv.jpg"
-              alt="website logo"
-            />
-          </Link>
-          <button type="button" className="nav-mobile-btn">
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
-              alt="nav logout"
-              className="nav-bar-image"
-              onClick={onClickLogout}
-            />
-          </button>
-        </div>
-
         <div className="nav-bar-large-container">
           <Link to="/">
             <img
@@ -82,11 +69,18 @@ const Header = () => {
             className="logout-desktop-btn"
             onClick={onClickLogout}
           >
-            Logout
+            <CiLogin className="logout-icon" />
+          </button>
+          <button
+            type="button"
+            className="nav-hamburger-btn"
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          >
+            <RxHamburgerMenu className="hamburger-icon" />
           </button>
         </div>
       </div>
-      <div className="nav-menu-mobile">
+      <div className={`nav-menu-mobile ${isDropdownOpen ? "open" : ""}`}>
         <ul className="nav-menu-list-mobile">
           {!isAdmin ? (
             <>

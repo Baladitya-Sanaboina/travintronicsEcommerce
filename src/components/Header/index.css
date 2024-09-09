@@ -1,46 +1,51 @@
-* {
-  font-family: "Tajawal,Helvetica,Arial,sans-serif";
-}
-
 .nav-header {
+  padding-left: 60px;
+  padding-right: 60px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  border-bottom-width: 1px;
+  border-width: 0px 0px 1px;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 78px;
   display: flex;
-  justify-content: center;
-  border-bottom: 1px solid rgb(243, 243, 243);
-}
-
-@media screen and (max-width: 768px) {
-  .nav-header {
-    flex-direction: column;
-    align-items: center;
-    border-bottom-style: none;
-  }
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  border-style: solid;
+  border-color: rgb(229, 231, 235);
 }
 
 .nav-content {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  width: 90%;
-  max-width: 1110px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
-@media screen and (max-width: 768px) {
-  .nav-content {
-    flex-direction: column;
-  }
+  align-items: center;
+  width: 100%;
 }
 
 .nav-bar-mobile-logo-container {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  align-items: center;
+  column-gap: 20px;
 }
 
-@media screen and (min-width: 768px) {
-  .nav-bar-mobile-logo-container {
-    display: none;
-  }
+.website-logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+.nav-mobile-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-bar-image {
+  width: 24px;
+  height: 24px;
 }
 
 .nav-bar-large-container {
@@ -48,123 +53,147 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1110px;
-}
-
-@media screen and (max-width: 767px) {
-  .nav-bar-large-container {
-    display: none;
-  }
-}
-
-.website-logo {
-  width: 110px;
-}
-
-@media screen and (min-width: 768px) {
-  .website-logo {
-    width: 165px;
-  }
 }
 
 .nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-self: flex-end;
-  flex: 1;
-  list-style-type: none;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-@media screen and (max-width: 767px) {
-  .nav-menu {
-    display: none;
-  }
-}
-.nav-menu-mobile {
-  width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-  .nav-menu-mobile {
-    display: none;
-  }
-}
-
-.nav-menu-list-mobile {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  height: 70px;
-  background-color: #e6f6ff;
-  flex: 1;
-  list-style-type: none;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 0px;
+  column-gap: 20px;
 }
 
 .nav-menu-item {
-  font-family: "Tajawal,Helvetica,Arial,sans-serif";
-  text-decoration: none;
-  margin: 10px;
-  font-weight: 400;
-  font-size: 16px;
+  border-width: 0px;
+  border-style: solid;
+  border-color: rgb(229, 231, 235);
 }
 
 .nav-link {
+  text-transform: uppercase;
+  padding: 12px;
+  display: inline-block;
+  color: rgb(0, 0, 0);
   text-decoration: none;
-  color: #475569;
-}
-
-.nav-menu-item-mobile {
-  margin: 0px;
-  cursor: pointer;
 }
 
 .logout-desktop-btn {
-  font-family: "Tajawal,Helvetica,Arial,sans-serif";
-  font-weight: 600;
-  font-size: 10px;
-  padding: 8px 16px;
-  color: #ffffff;
-  background-color: #0967d2;
+  background-color: transparent;
   border: none;
-  border-radius: 4px;
-  margin-left: 14px;
   cursor: pointer;
-  outline: none;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
 }
 
-@media screen and (max-width: 767px) {
-  .logout-desktop-btn {
-    display: none;
-  }
+.nav-menu-mobile {
+  display: none; /* Adjust this to be visible on mobile */
 }
-.nav-mobile-btn-container {
+
+.nav-menu-list-mobile {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  justify-content: center;
-  width: 35%;
-  margin: 10px;
+  column-gap: 20px;
 }
 
-.nav-mobile-btn {
-  border: none;
-  padding: 0px;
-  background: transparent;
-  cursor: pointer;
-  outline: none;
+.nav-menu-item-mobile {
+  border-width: 0px;
+  border-style: solid;
+  border-color: rgb(229, 231, 235);
 }
 
-@media screen and (min-width: 768px) {
-  .nav-mobile-btn {
-    display: none;
-  }
+.nav-menu-item-mobile .nav-link {
+  display: block;
 }
 
-.nav-bar-image {
+.nav-menu-item-mobile .nav-bar-image {
   width: 24px;
+  height: 24px;
+}
+.logout-desktop-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  column-gap: 8px; /* Adjust space between icon and text */
+}
+
+.logout-icon {
+  font-size: 30px; /* Adjust the icon size as needed */
+}
+
+/* General styling for nav-header */
+.nav-header {
+  position: relative;
+}
+
+/* Show hamburger button only on mobile devices */
+.nav-hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hide by default */
+}
+
+.hamburger-icon {
+  font-size: 24px;
+  color: #000;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  /* Adjust breakpoint as needed */
+  .nav-bar-large-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-menu {
+    display: none; /* Hide desktop menu on mobile */
+  }
+
+  .nav-hamburger-btn {
+    display: block; /* Show hamburger button on mobile */
+  }
+
+  .nav-menu-mobile {
+    display: none; /* Hide dropdown menu by default */
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .nav-menu-mobile.open {
+    display: block; /* Show dropdown menu when open */
+  }
+
+  .nav-menu-list-mobile {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-menu-item-mobile {
+    padding: 10px;
+  }
+
+  .nav-menu-item-mobile .nav-link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+  }
+
+  .nav-menu-item-mobile .nav-bar-image {
+    width: 24px; /* Adjust size as needed */
+  }
 }

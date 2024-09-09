@@ -1,4 +1,4 @@
-.category-card-container {
+.category-product-container {
   gap: 32px;
   -webkit-font-smoothing: antialiased;
   outline: none;
@@ -13,7 +13,7 @@
   font-family: "GalanoGrotesque, sans-serif";
 }
 
-.item {
+.category-product-item {
   width: 45%;
   margin: 10px;
   -webkit-font-smoothing: antialiased;
@@ -25,7 +25,7 @@
   font-family: "GalanoGrotesque, sans-serif";
 }
 
-.image-container {
+.category-product-image-container {
   aspect-ratio: auto;
   max-width: 100%;
   max-height: 100%;
@@ -45,7 +45,7 @@
   font-family: "GalanoGrotesque, sans-serif";
 }
 
-.image {
+.category-product-image {
   border: 1px solid var(--black-90);
   object-fit: cover;
   width: 100%;
@@ -61,7 +61,7 @@
   font-family: "GalanoGrotesque, sans-serif";
 }
 
-.gradient-overlay {
+.category-product-gradient-overlay {
   left: 0;
   right: 0;
   top: 0;
@@ -80,7 +80,7 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.text-container {
+.category-product-text-container {
   bottom: 32px;
   text-align: center;
   color: #fff;
@@ -88,7 +88,7 @@
   position: absolute;
 }
 
-.text {
+.category-product-text {
   padding-left: 32px;
   padding-right: 32px;
   font-size: 28px;
@@ -99,13 +99,13 @@
   text-transform: uppercase;
 }
 
-.link {
+.category-product-link {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
 
-.button {
+.category-product-button {
   font-size: 16px;
   line-height: 24px;
   padding: 12px 32px;
@@ -119,23 +119,23 @@
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
-  .item {
+  .category-product-item {
     width: 100%;
   }
-  .image-container {
+  .category-product-image-container {
     height: 350px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .image-container {
+  .category-product-image-container {
     height: 300px;
   }
-  .text {
+  .category-product-text {
     font-size: 20px;
     line-height: 28px;
   }
-  .button {
+  .category-product-button {
     font-size: 14px;
     padding: 10px 24px;
   }
