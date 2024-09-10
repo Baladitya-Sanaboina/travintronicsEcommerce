@@ -1,9 +1,10 @@
 import { Component } from "react";
 import EachProduct from "../EachProduct";
 import "./index.css";
+import { ThreeDots } from "react-loader-spinner";
 
 class Mens extends Component {
-  state = { menProducts: [] };
+  state = { menProducts: [], isLoading: true };
   componentDidMount() {
     this.getProducts();
   }
@@ -13,10 +14,10 @@ class Mens extends Component {
     );
     if (response.ok) {
       const data = await response.json();
-      this.setState({ menProducts: data });
+      this.setState({ menProducts: data, isLoading: false });
     }
   };
-  render() {
+  renderProducts = () => {
     const { menProducts } = this.state;
     return (
       <div className="each-product-card-men">
@@ -25,6 +26,17 @@ class Mens extends Component {
         ))}
       </div>
     );
+  };
+  renderLoader = () => {
+    return (
+      <div className="loader-container" data-testid="loader">
+        <ThreeDots type="ThreeDots" color="#0050cf" height="50" width="50" />
+      </div>
+    );
+  };
+  render() {
+    const { isLoading } = this.state;
+    return <div>{isLoading ? this.renderLoader() : this.renderProducts()}</div>;
   }
 }
 

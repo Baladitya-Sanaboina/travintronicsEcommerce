@@ -1,6 +1,7 @@
 import { Component } from "react";
 import EachProduct from "../EachProduct";
 import "./index.css";
+import { ThreeDots } from "react-loader-spinner";
 
 class Products extends Component {
   state = { allProducts: [], isLoading: true };
@@ -14,16 +15,26 @@ class Products extends Component {
       this.setState({ allProducts: data, isLoading: false });
     }
   };
-  render() {
-    const { allProducts, isLoading } = this.state;
+  renderProducts = () => {
+    const { allProducts } = this.state;
     return (
       <div className="each-product-card">
-        <div>{isLoading && <h1>Loading...</h1>}</div>
         {allProducts.map((eachItem) => (
           <EachProduct key={eachItem.id} product={eachItem} />
         ))}
       </div>
     );
+  };
+  renderLoader = () => {
+    return (
+      <div className="loader-container" data-testid="loader">
+        <ThreeDots type="ThreeDots" color="#0050cf" height="50" width="50" />
+      </div>
+    );
+  };
+  render() {
+    const { isLoading } = this.state;
+    return <div>{isLoading ? this.renderLoader() : this.renderProducts()}</div>;
   }
 }
 

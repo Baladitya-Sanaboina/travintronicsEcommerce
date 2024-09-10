@@ -1,26 +1,26 @@
 import { Component } from "react";
 import EachProduct from "../EachProduct";
-import "./index.css";
 import { ThreeDots } from "react-loader-spinner";
-class Women extends Component {
-  state = { allWomenProducts: [], isLoading: true };
+
+class Electronics extends Component {
+  state = { electronicsProduct: [], isLoading: true };
   componentDidMount() {
-    this.getProducts();
+    this.getData();
   }
-  getProducts = async () => {
+  getData = async () => {
     const response = await fetch(
-      `https://fakestoreapi.com/products/category/women's clothing`
+      `https://fakestoreapi.com/products/category/electronics`
     );
     if (response.ok) {
       const data = await response.json();
-      this.setState({ allWomenProducts: data, isLoading: false });
+      this.setState({ electronicsProduct: data, isLoading: false });
     }
   };
   renderProducts = () => {
-    const { allWomenProducts } = this.state;
+    const { electronicsProduct } = this.state;
     return (
-      <div className="each-product-card-women">
-        {allWomenProducts.map((eachItem) => (
+      <div className="each-product-card-men">
+        {electronicsProduct.map((eachItem) => (
           <EachProduct key={eachItem.id} product={eachItem} />
         ))}
       </div>
@@ -38,4 +38,5 @@ class Women extends Component {
     return <div>{isLoading ? this.renderLoader() : this.renderProducts()}</div>;
   }
 }
-export default Women;
+
+export default Electronics;

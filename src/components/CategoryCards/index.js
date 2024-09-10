@@ -42,15 +42,15 @@ const CategoryCards = () => {
       <div className="category-product-item">
         <div className="category-product-image-container">
           <img
-            src="https://res.cloudinary.com/dbylngblb/image/upload/v1725877746/3_ts2dfl.jpg"
-            alt="Image-Text-Kids"
+            src="https://res.cloudinary.com/dbylngblb/image/upload/v1725890586/3_pgfu3h.jpg"
+            alt="Image-Text-electronics"
             className="category-product-image"
             loading="lazy"
           />
           <div className="category-product-gradient-overlay">
             <div className="category-product-text-container">
-              <div className="category-product-text">KIDS</div>
-              <a href="/" className="category-product-link">
+              <div className="category-product-text">Electronics</div>
+              <a href="/category/electronics" className="category-product-link">
                 <p className="category-product-button">Shop Now</p>
               </a>
             </div>
@@ -60,15 +60,15 @@ const CategoryCards = () => {
       <div className="category-product-item">
         <div className="category-product-image-container">
           <img
-            src="https://res.cloudinary.com/dbylngblb/image/upload/v1725877746/4_pw80gg.jpg"
-            alt="Image-Text-Watches"
+            src="https://res.cloudinary.com/dbylngblb/image/upload/v1725890586/4_ezyioc.jpg"
+            alt="Image-Text-Jewlery"
             className="category-product-image"
             loading="lazy"
           />
           <div className="category-product-gradient-overlay">
             <div className="category-product-text-container">
-              <div className="category-product-text">WATCHES</div>
-              <a href="/" className="category-product-link">
+              <div className="category-product-text">Jewlery</div>
+              <a href="/category/jewelery" className="category-product-link">
                 <p className="category-product-button">Shop Now</p>
               </a>
             </div>

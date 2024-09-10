@@ -10,6 +10,9 @@ import Cart from "./components/Cart";
 import AddProducts from "./components/AddProducts";
 import Mens from "./components/Mens";
 import Women from "./components/Women";
+import DetailedProduct from "./components/DetailedProduct";
+import Electronics from "./components/Electronics";
+import Jewlery from "./components/Jewlery";
 
 function Layout() {
   const location = useLocation();
@@ -37,6 +40,15 @@ function Layout() {
         </Route>
         <Route path="/product-add" element={<ProtectedRoute />}>
           <Route index element={<AddProducts />} />
+        </Route>
+        <Route path="/category/jewelery" element={<ProtectedRoute />}>
+          <Route index element={<Jewlery />} />
+        </Route>
+        <Route path="/category/electronics" element={<ProtectedRoute />}>
+          <Route index element={<Electronics />} />
+        </Route>
+        <Route path="/products/:id" element={<ProtectedRoute />}>
+          <Route index element={<DetailedProduct />} />
         </Route>
         <Route path="/admin" element={<Admin />} />
       </Routes>
