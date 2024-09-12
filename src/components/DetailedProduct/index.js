@@ -2,19 +2,26 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./index.css";
 import { ThreeDots } from "react-loader-spinner";
-import { BsDashSquare, BsPlusSquare } from "react-icons/bs"; // Add import for icons
+import { BsDashSquare, BsPlusSquare } from "react-icons/bs";
+import Cookies from "js-cookie";
 
 const DetailedProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [quantity, setQuantity] = useState(1); // Added state for quantity
+  const [quantity, setQuantity] = useState(1);
 
   const getData = async () => {
-    const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-    if (response.ok) {
-      const data = await response.json();
-      setProduct(data);
+    try {
+      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      if (response.ok) {
+        const data = await response.json();
+        setProduct(data);
+      } else {
+        console.error("Failed to fetch product data.");
+      }
+    } catch (error) {
+      console.error("Error fetching product data:", error);
     }
     setLoading(false);
   };
@@ -29,6 +36,18 @@ const DetailedProduct = () => {
 
   const onDecrementQuantity = () => {
     setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
+  };
+
+  const addProductToCart = async (productId) => {
+    /*const userId = Cookies.get("user");
+    if (!userId) {
+      console.error("No user ID found in cookies.");
+      return;
+    }
+    const previousData = localStorage.getItem(`${userId}`);
+    const updatedData = [...previousData, productId];
+    localStorage.setItem(`${userId}`, updatedData);
+    */
   };
 
   if (loading)
@@ -99,7 +118,11 @@ const DetailedProduct = () => {
               <BsPlusSquare className="quantity-controller-icon" />
             </button>
           </div>
-          <button type="button" className="button add-to-cart-btn">
+          <button
+            type="button"
+            className="button add-to-cart-btn"
+            onClick={() => addProductToCart(id)}
+          >
             ADD TO CART
           </button>
         </div>

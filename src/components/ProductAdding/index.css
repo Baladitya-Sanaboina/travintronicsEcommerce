@@ -1,0 +1,267 @@
+/* From Uiverse.io by Yaya12085 */
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.form-title {
+  font-size: 28px;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.form-title::before,
+.form-title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: royalblue;
+}
+
+.form-title::before {
+  width: 18px;
+  height: 18px;
+  background-color: royalblue;
+}
+
+.form-title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.message,
+.signin-link {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.signin-link {
+  text-align: center;
+}
+
+.signin-link a {
+  color: royalblue;
+}
+
+.signin-link a:hover {
+  text-decoration: underline royalblue;
+}
+
+.form-group {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.custom-form label {
+  position: relative;
+}
+
+.custom-form label .form-input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.custom-form label .form-input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.custom-form label .form-input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.custom-form label .form-input:focus + span,
+.custom-form label .form-input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.custom-form label .form-input:valid + span {
+  color: green;
+}
+
+.submit-button {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+.form-card {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.product-adding-main-bg {
+  padding: 20px;
+}
+form {
+  width: 90%;
+}
+.image-preview {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.preview-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+@media (width >= 768px) {
+  .input-in-two-row {
+    display: flex;
+  }
+  .each-input-feild {
+    width: 50%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.each-input-feild {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.preview-img {
+  height: 400px;
+  width: 400px;
+}
+.image-preview {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+/* From Uiverse.io by mobinkakei */
+.add-product-button {
+  display: flex;
+  padding: 11px 33px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  background: #6225e6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  border: none;
+  cursor: pointer;
+}
+
+.add-product-button:focus {
+  outline: none;
+}
+
+.add-product-button-hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #fbc638;
+}
+
+.add-product-button .second-icon {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.add-product-button-hover .second-icon {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+.add-product-button-span {
+  transform: skewX(15deg);
+}
+
+.second-icon {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+.icon-one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+.icon-two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.add-product-button-hover .icon-three {
+  animation: color-anim 1s infinite 0.2s;
+}
+
+.add-product-button-hover .icon-one {
+  transform: translateX(0%);
+  animation: color-anim 1s infinite 0.6s;
+}
+
+.add-product-button-hover .icon-two {
+  transform: translateX(0%);
+  animation: color-anim 1s infinite 0.4s;
+}
+
+@keyframes color-anim {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: #fbc638;
+  }
+  100% {
+    fill: white;
+  }
+}

@@ -2,6 +2,7 @@ import { Component } from "react";
 import "./index.css";
 import EachProduct from "../EachProduct";
 import { ThreeDots } from "react-loader-spinner";
+import FiltersGroup from "../FiltersGroup";
 
 class Jewlery extends Component {
   state = { jewleryProducts: [], isLoading: true };
@@ -20,10 +21,13 @@ class Jewlery extends Component {
   renderProducts = () => {
     const { jewleryProducts } = this.state;
     return (
-      <div className="each-product-card-men">
-        {jewleryProducts.map((eachItem) => (
-          <EachProduct key={eachItem.id} product={eachItem} />
-        ))}
+      <div className="product-sections">
+        <FiltersGroup />
+        <div className="each-product-card-men">
+          {jewleryProducts.map((eachItem) => (
+            <EachProduct key={eachItem.id} product={eachItem} />
+          ))}
+        </div>
       </div>
     );
   };

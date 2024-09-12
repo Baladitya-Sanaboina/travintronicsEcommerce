@@ -1,0 +1,29 @@
+/* Mobile view */
+@media (max-width: 768px) {
+  .product-sections {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filters-group-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .each-product-card-men {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+}
+
+@media (min-width: 992px) {
+  .filters-group-container {
+    margin-right: auto;
+  }
+  .each-product-card-men {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

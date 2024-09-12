@@ -91,33 +91,3 @@
   width: 20px;
   margin-bottom: 3px;
 }
-/* From Uiverse.io by felipesntr */
-.custom-button {
-  border: 2px solid #24b4fb;
-  background-color: #24b4fb;
-  border-radius: 0.9em;
-  cursor: pointer;
-  padding: 0.8em 1.2em 0.8em 1em;
-  transition: all ease-in-out 0.2s;
-  font-size: 16px;
-}
-
-.button-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-weight: 600;
-}
-
-.custom-button:hover {
-  background-color: #0071e2;
-}
-.button-container {
-  align-self: right;
-  margin: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: right;
-}

@@ -24,11 +24,15 @@ class Login extends Component {
     event.preventDefault();
     const { username, password } = this.state;
 
-    if (username === "admin" && password === "admin12") {
+    if (username === "admin" && password === "admin") {
       Cookies.set("jwtToken", "admin", { expires: 30 });
       this.setState({ redirectToAdmin: true });
-    } else if (username === "user" && password === "user12") {
+    } else if (
+      (username === "user1" || username === "user2") &&
+      (password === "user1" || password === "user2")
+    ) {
       Cookies.set("jwtToken", "user", { expires: 30 });
+      Cookies.set("user", username, { expires: 30 });
       this.setState({ redirectToHome: true });
     } else {
       this.setState({ showSubmitError: true });
