@@ -1,5 +1,3 @@
-Travintronics Ecommerce - README body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f4; } h1, h2 { color: #333; } pre { background-color: #f0f0f0; padding: 10px; border-radius: 5px; overflow-x: auto; } code { font-family: "Courier New", Courier, monospace; background-color: #eee; padding: 2px 5px; border-radius: 4px; } a { color: #3498db; text-decoration: none; } a:hover { text-decoration: underline; } ul { list-style-type: disc; margin-left: 20px; } pre code { display: block; }
-
 # Travintronics Ecommerce
 
 **Travintronics Ecommerce** is a full-stack web application designed for online shopping, offering a seamless user experience. Users can browse products, manage their cart, and complete purchases. The project uses modern technologies including JSON server for backend API and Firebase for authentication.
