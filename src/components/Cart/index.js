@@ -30,6 +30,13 @@ const Cart = () => {
     );
   };
 
+  // Function to handle item deletion
+  const deleteItem = (title) => {
+    setCartData((prevCartData) =>
+      prevCartData.filter((item) => item.title !== title)
+    );
+  };
+
   const renderEachItem = (data) => {
     const {
       title,
@@ -71,22 +78,28 @@ const Cart = () => {
               updateQuantity(title, Math.max(1, +e.target.value))
             } // Ensure minimum quantity is 1
           />
-
-          <button onClick={() => updateQuantity(title, quantity + 1)}>+</button>
+          <button
+            onClick={() => updateQuantity(title, quantity + 1)}
+            className="cart-function-buttons"
+          >
+            +
+          </button>
         </div>
         <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-          <h6 className="mb-0">€ {price * quantity}</h6>{" "}
+          <h6 className="mb-0">₹ {price * quantity}</h6>{" "}
           {/* Update price based on quantity */}
         </div>
         <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-          <a href="#!" className="text-muted">
+          <button onClick={() => deleteItem(title)} className="btn btn-danger">
             <i className="fas fa-times"></i>
-          </a>
+          </button>
         </div>
       </div>
     );
   };
-
+  const onBuyNow = () => {
+    alert("Your Order is placed");
+  };
   const totalItems = cartData
     ? cartData.reduce((acc, item) => acc + item.quantity, 0)
     : 0;
@@ -113,7 +126,11 @@ const Cart = () => {
                       </div>
                       <hr className="my-4" />
                       {cartData ? (
-                        cartData.map((eachItem) => renderEachItem(eachItem))
+                        cartData.length > 0 ? (
+                          cartData.map((eachItem) => renderEachItem(eachItem))
+                        ) : (
+                          <p>Your cart is empty</p>
+                        )
                       ) : (
                         <p>Loading cart data...</p>
                       )}
@@ -134,25 +151,26 @@ const Cart = () => {
                       <hr className="my-4" />
                       <div className="d-flex justify-content-between mb-4">
                         <h5 className="text-uppercase">items {totalItems}</h5>
-                        <h5>€ {totalPrice.toFixed(2)}</h5>
+                        <h5>₹ {totalPrice.toFixed(2)}</h5>
                       </div>
                       <h5 className="text-uppercase mb-3">Shipping</h5>
                       <div className="mb-4 pb-2">
                         <select className="form-control">
-                          <option value="1">Standard-Delivery- €5.00</option>
-                          <option value="2">Express Delivery</option>
+                          <option value="1">Express-Delivery- ₹5.00</option>
+                          <option value="2">Standard Delivery</option>
                         </select>
                       </div>
                       <hr className="my-4" />
                       <div className="d-flex justify-content-between mb-5">
                         <h5 className="text-uppercase">Total price</h5>
-                        <h5>€ {(totalPrice + 5).toFixed(2)}</h5>
+                        <h5>₹ {(totalPrice + 5).toFixed(2)}</h5>
                       </div>
                       <button
                         type="button"
                         className="btn btn-dark btn-block btn-lg"
+                        onClick={onBuyNow}
                       >
-                        Register
+                        Buy Now
                       </button>
                     </div>
                   </div>

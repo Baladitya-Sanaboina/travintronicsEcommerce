@@ -38,7 +38,29 @@ const DetailedProduct = () => {
     setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
   };
 
-  const addProductToCart = async (productId) => {};
+  const addProductToCart = async (productId) => {
+    const userId = Cookies.get("user"); // Assuming you're using the 'user' cookie to get the current user ID
+    const productData = product;
+    const url = `/${userId}`;
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(productData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Product added to cart:", data);
+      } else {
+        console.error("Failed to add product to cart");
+      }
+    } catch (error) {
+      console.error("Error adding product to cart:", error);
+    }
+  };
 
   if (loading)
     return (

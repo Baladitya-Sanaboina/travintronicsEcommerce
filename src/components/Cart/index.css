@@ -57,10 +57,12 @@
   }
 }
 .cart-function-buttons {
-  border-width: 1px;
+  border-width: 0px;
   border-radius: 80px;
   height: 30px;
-  width: 30px;
+  width: 50px;
   padding-bottom: 10px;
   padding-top: -20px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
