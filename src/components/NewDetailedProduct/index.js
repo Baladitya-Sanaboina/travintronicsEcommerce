@@ -2,10 +2,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./index.css";
 import { ThreeDots } from "react-loader-spinner";
-import { BsDashSquare, BsPlusSquare } from "react-icons/bs";
-import Cookies from "js-cookie";
 
-const DetailedProduct = () => {
+const NewDetailedProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -13,7 +11,7 @@ const DetailedProduct = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const response = await fetch(`products/${id}`);
       if (response.ok) {
         const data = await response.json();
         setProduct(data);
@@ -29,16 +27,6 @@ const DetailedProduct = () => {
   useEffect(() => {
     getData();
   }, [id]);
-
-  const onIncrementQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-
-  const onDecrementQuantity = () => {
-    setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
-  };
-
-  const addProductToCart = async (productId) => {};
 
   if (loading)
     return (
@@ -89,36 +77,10 @@ const DetailedProduct = () => {
             <p className="value">{brand}</p>
           </div>
           <hr className="horizontal-line" />
-          <div className="quantity-container">
-            <button
-              type="button"
-              className="quantity-controller-button"
-              onClick={onDecrementQuantity}
-              data-testid="minus"
-            >
-              <BsDashSquare className="quantity-controller-icon" />
-            </button>
-            <p className="quantity">{quantity}</p>
-            <button
-              type="button"
-              className="quantity-controller-button"
-              onClick={onIncrementQuantity}
-              data-testid="plus"
-            >
-              <BsPlusSquare className="quantity-controller-icon" />
-            </button>
-          </div>
-          <button
-            type="button"
-            className="button add-to-cart-btn"
-            onClick={() => addProductToCart(id)}
-          >
-            ADD TO CART
-          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default DetailedProduct;
+export default NewDetailedProduct;

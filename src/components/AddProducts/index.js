@@ -4,9 +4,10 @@ import Cookies from "js-cookie";
 import "./index.css";
 import { ThreeDots } from "react-loader-spinner";
 import AdminProducts from "../AdminProducts";
+import NewProducts from "../NewProducts";
 
 class AddProducts extends Component {
-  state = { allProducts: [], isLoading: true };
+  state = { allProducts: [], isLoading: true, newProducts: [] };
 
   componentDidMount() {
     this.getProducts();
@@ -14,19 +15,35 @@ class AddProducts extends Component {
 
   getProducts = async () => {
     const response = await fetch("https://fakestoreapi.com/products");
+
     if (response.ok) {
       const data = await response.json();
       this.setState({ allProducts: data, isLoading: false });
     }
+
+    const secondResponse = await fetch("/products");
+    if (secondResponse.ok) {
+      const data = await secondResponse.json();
+      this.setState({ newProducts: data });
+    }
   };
 
   renderProducts = () => {
-    const { allProducts } = this.state;
+    const { allProducts, newProducts } = this.state;
     return (
-      <div className="each-product-card">
-        {allProducts.map((eachItem) => (
-          <AdminProducts key={eachItem.id} product={eachItem} />
-        ))}
+      <div>
+        <h1>New Products</h1>
+        <div className="each-product-card">
+          {newProducts.map((eachItem) => (
+            <NewProducts key={eachItem.id} product={eachItem} />
+          ))}
+        </div>
+        <h1>Products</h1>
+        <div className="each-product-card">
+          {allProducts.map((eachItem) => (
+            <AdminProducts key={eachItem.id} product={eachItem} />
+          ))}
+        </div>
       </div>
     );
   };

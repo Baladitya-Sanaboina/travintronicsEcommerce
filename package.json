@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@mui/icons-material": "^6.1.0",
+    "@mui/material": "^6.1.0",
     "@syncfusion/ej2-base": "^26.2.10",
     "@syncfusion/ej2-react-charts": "^26.2.14",
     "@syncfusion/ej2-react-layouts": "^26.2.10",
@@ -24,6 +28,7 @@
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
     "recharts": "^2.12.7",
+    "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4"
   },
   "proxy": "http://localhost:3000",

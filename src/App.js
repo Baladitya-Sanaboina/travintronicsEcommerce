@@ -14,6 +14,7 @@ import DetailedProduct from "./components/DetailedProduct";
 import Electronics from "./components/Electronics";
 import Jewlery from "./components/Jewlery";
 import ProductAdding from "./components/ProductAdding";
+import NewDetailedProduct from "./components/NewDetailedProduct";
 
 function Layout() {
   const location = useLocation();
@@ -50,6 +51,9 @@ function Layout() {
         </Route>
         <Route path="/products/:id" element={<ProtectedRoute />}>
           <Route index element={<DetailedProduct />} />
+        </Route>
+        <Route path="/new-products/:id" element={<ProtectedRoute />}>
+          <Route index element={<NewDetailedProduct />} />
         </Route>
         <Route path="/new-product" element={<ProtectedRoute />}>
           <Route index element={<ProductAdding />} />

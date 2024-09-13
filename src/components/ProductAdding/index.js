@@ -1,22 +1,27 @@
 import React, { useState } from "react";
 import "./index.css";
-import axios from "axios";
+import { v4 as id } from "uuid";
+
 const ProductAdding = () => {
   const [formData, setFormData] = useState({
+    id: id(),
     title: "",
     price: "",
     description: "",
     category: "",
     image: "",
     availability: "",
+    rate: "5",
   });
 
   const [imagePreview, setImagePreview] = useState(null);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    setFormData({ ...formData, image: file });
-    setImagePreview(URL.createObjectURL(file));
+    if (file) {
+      setFormData({ ...formData, image: file });
+      setImagePreview(URL.createObjectURL(file));
+    }
   };
 
   const handleInputChange = (e) => {
@@ -25,12 +30,32 @@ const ProductAdding = () => {
 
   const addProductButton = async (e) => {
     e.preventDefault();
-
     console.log(formData);
-    const url = `/products`;
-
-    const dt = JSON.stringify({ data: { value: "gdfg1df2g2121dgfdg" } });
-    const request = axios.post(url, { dt });
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    };
+    const url = `http://localhost:3000/products`;
+    const response = await fetch(url, options);
+    if (response.ok) {
+      alert("Product added succesfully");
+      setFormData({
+        id: id(),
+        title: "",
+        price: "",
+        description: "",
+        category: "",
+        image: "",
+        availability: "",
+        rate: "5",
+      });
+      setImagePreview(null);
+    } else {
+      alert("Product not added");
+    }
   };
 
   return (
@@ -99,7 +124,7 @@ const ProductAdding = () => {
                 required
                 placeholder=""
                 type="text"
-                name="availability" // Updated name to availability
+                name="availability"
                 value={formData.availability}
                 onChange={handleInputChange}
                 className="form-input"

@@ -1,16 +1,68 @@
 {
   "products": [
     {
-      "id": "1"
+      "id": "123213",
+      "title": "Sample Shirt",
+      "price": "12000",
+      "description": "Lorem ipsum",
+      "category": "Mens",
+      "image": "sample.jpeg",
+      "availability": "5",
+      "rate": "5"
     },
     {
-      "id": "4"
+      "id": "23123",
+      "title": "Sample Pant",
+      "price": "1000",
+      "description": "Lorem ipsum",
+      "category": "Mens",
+      "image": "sample.jpeg",
+      "availability": "5",
+      "rate": "5"
     },
     {
-      "id": "4"
+      "id": "96368da6-04d3-4c2f-8441-5e188bca43ef",
+      "title": "Test",
+      "price": "Test price",
+      "description": "adfds",
+      "category": "Men",
+      "image": {},
+      "availability": "asdf",
+      "rate": "5"
     },
     {
-      "id": "5"
+      "id": "62ed3088-40e7-42a0-a86a-0c34e187ebd5",
+      "title": "ASDF",
+      "price": "QQADSF",
+      "description": "091U2O37O3Y",
+      "category": "Men",
+      "image": {},
+      "availability": "1521",
+      "rate": "5"
+    }
+  ],
+  "user1": [
+    {
+      "title": "tst",
+      "price": "1200",
+      "description": "Lorem ipsum",
+      "category": "Electronics",
+      "image": "image",
+      "rating": "12",
+      "availability": "20",
+      "brand": "20"
+    }
+  ],
+  "user2": [
+    {
+      "title": "Test2",
+      "price": "2100",
+      "description": "Lorem ipsum",
+      "category": "Mens",
+      "image": "image",
+      "rating": "12",
+      "availability": "20",
+      "brand": "20"
     }
   ]
 }
