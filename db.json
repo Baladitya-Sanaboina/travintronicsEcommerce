@@ -1,53 +1,13 @@
 {
   "products": [
     {
-      "id": "123213",
-      "title": "Sample Shirt",
-      "price": "12000",
-      "description": "Lorem ipsum",
-      "category": "Mens",
-      "image": "sample.jpeg",
-      "availability": "5",
-      "rate": "5"
-    },
-    {
-      "id": "23123",
-      "title": "Sample Pant",
-      "price": "1000",
-      "description": "Lorem ipsum",
-      "category": "Mens",
-      "image": "sample.jpeg",
-      "availability": "5",
-      "rate": "5"
-    },
-    {
-      "id": "96368da6-04d3-4c2f-8441-5e188bca43ef",
-      "title": "Test",
-      "price": "Test price",
-      "description": "adfds",
+      "id": "3b41d6f9-891e-424e-bb67-510e071d63e6",
+      "title": "asd",
+      "price": "asdf",
+      "description": "asdfasd",
       "category": "Men",
-      "image": {},
-      "availability": "asdf",
-      "rate": "5"
-    },
-    {
-      "id": "62ed3088-40e7-42a0-a86a-0c34e187ebd5",
-      "title": "ASDF",
-      "price": "QQADSF",
-      "description": "091U2O37O3Y",
-      "category": "Men",
-      "image": {},
-      "availability": "1521",
-      "rate": "5"
-    },
-    {
-      "id": "08229e67-f8e7-4ccd-a5a3-c4217e131219",
-      "title": "New",
-      "price": "New",
-      "description": "Lorem Ipsum",
-      "category": "Men",
-      "image": {},
-      "availability": "asd",
+      "image": "https://firebasestorage.googleapis.com/v0/b/travintronics2.appspot.com/o/images%2F3b41d6f9-891e-424e-bb67-510e071d63e6?alt=media&token=fadbed05-6007-407d-bc14-4fdc79f81f5a",
+      "availability": "1212",
       "rate": "5"
     }
   ],
@@ -60,10 +20,11 @@
       "image": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
       "rating": "12",
       "availability": "20",
-      "brand": "20"
+      "brand": "20",
+      "id": "d500"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Mens Casual Premium Slim Fit T-Shirts ",
       "price": 22.3,
       "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
@@ -75,7 +36,7 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Mens Cotton Jacket",
       "price": 55.99,
       "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
@@ -87,7 +48,7 @@
       }
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "White Gold Plated Princess",
       "price": 9.99,
       "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
@@ -108,7 +69,8 @@
       "image": "image",
       "rating": "12",
       "availability": "20",
-      "brand": "20"
+      "brand": "20",
+      "id": "8f50"
     }
   ]
 }

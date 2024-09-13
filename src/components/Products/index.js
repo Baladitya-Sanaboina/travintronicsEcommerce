@@ -2,9 +2,10 @@ import { Component } from "react";
 import EachProduct from "../EachProduct";
 import "./index.css";
 import { ThreeDots } from "react-loader-spinner";
+import NewProducts from "../NewProducts";
 
 class Products extends Component {
-  state = { allProducts: [], isLoading: true };
+  state = { allProducts: [], isLoading: true, newProducts: [] };
   componentDidMount() {
     this.getProducts();
   }
@@ -13,6 +14,12 @@ class Products extends Component {
     if (response.ok) {
       const data = await response.json();
       this.setState({ allProducts: data, isLoading: false });
+    }
+
+    const newResponse = await fetch(`/products`);
+    if (newResponse.ok) {
+      const newData = await newResponse.json();
+      this.setState({ newProducts: newData });
     }
   };
   renderProducts = () => {
@@ -25,6 +32,30 @@ class Products extends Component {
       </div>
     );
   };
+
+  renderNewProduct = () => {
+    const { newProducts } = this.state;
+    return (
+      <div>
+        <h1>New Products</h1>
+        <div className="each-product-card">
+          {newProducts.map((eachItem) => (
+            <NewProducts key={eachItem.id} product={eachItem} />
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  renderAllProducts = () => {
+    return (
+      <div>
+        {this.renderNewProduct()}
+        {this.renderProducts()}
+      </div>
+    );
+  };
+
   renderLoader = () => {
     return (
       <div className="loader-container" data-testid="loader">
@@ -34,7 +65,9 @@ class Products extends Component {
   };
   render() {
     const { isLoading } = this.state;
-    return <div>{isLoading ? this.renderLoader() : this.renderProducts()}</div>;
+    return (
+      <div>{isLoading ? this.renderLoader() : this.renderAllProducts()}</div>
+    );
   }
 }
 
